@@ -27,4 +27,14 @@ public class ThreadPool2 {
             worker.interrupt();
         }
     }
+
+    public void awaitTermination() {
+        for (Thread worker : workers) {
+            try {
+                worker.join();
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+    }
 }

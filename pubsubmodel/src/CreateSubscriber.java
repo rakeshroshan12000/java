@@ -4,7 +4,7 @@ public class CreateSubscriber implements Subscriber{
         this.name = name;
     }
     @Override
-    public void onMessage(String topic, int partition, String message) {
+    public void onMessage(String topic, int partition, Message message) {
         System.out.println("Subscriber " + name + " received message on topic " + topic + " partition " + partition + ": " + message);
     }
     @Override

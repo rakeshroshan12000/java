@@ -1,0 +1,3 @@
+[sports][partition-0] Message{content='Football match today!', timestamp=1775029411745}
+[sports][partition-1] Message{content='Cricket match tomorrow!', timestamp=1775029411755}
+[sports][partition-2] Message{content='Basketball finals next week!', timestamp=1775029411756}

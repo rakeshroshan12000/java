@@ -1,12 +1,11 @@
 package threadPool_with_task_scheduling;
 
 import java.util.concurrent.BlockingDeque;
+import java.util.concurrent.LinkedBlockingDeque;
 
 public class LifoQueue implements TaskQueue {
-    private final BlockingDeque<Task2> queue;
-    public LifoQueue(BlockingDeque<Task2> queue) {
-        this.queue = queue;
-    }
+    private final BlockingDeque<Task2> queue = new LinkedBlockingDeque<>();
+
     public synchronized void add(Task2 task) {
         queue.addFirst(task);
         notify();

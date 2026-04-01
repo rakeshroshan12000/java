@@ -1,3 +1,4 @@
+import threadPool_with_task_scheduling.LifoQueue;
 import threadPool_with_task_scheduling.PriorityQueue;
 import threadPool_with_task_scheduling.TaskQueue;
 import threadPool_with_task_scheduling.ThreadPool2;
@@ -11,7 +12,7 @@ public class Main {
 //            threadPool.submit(new Task("Task-" + i));
 //        }
 //        threadPool.shutdown();
-        TaskQueue queue = new PriorityQueue(); // try FifoQueue or LifoQueue
+        TaskQueue queue = new LifoQueue(); // try FifoQueue or LifoQueue
         ThreadPool2 pool = new ThreadPool2( 3, queue);
 
         pool.submit(() -> System.out.println("Task A executed"), 1, System.currentTimeMillis() + 1000);

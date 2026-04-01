@@ -10,6 +10,10 @@ public class Worker2 extends Thread {
         this.taskQueue = taskQueue;
         this.isshutdownInitiated = new AtomicBoolean(false);
     }
+    public void shutdown() {
+        isshutdownInitiated.set(true);
+        this.interrupt(); // wake up if blocked
+    }
     public void run() {
         while (!isshutdownInitiated.get()) {
                 Task2 task = taskQueue.poll();

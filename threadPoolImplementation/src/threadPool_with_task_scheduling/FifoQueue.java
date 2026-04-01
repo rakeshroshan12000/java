@@ -20,4 +20,8 @@ public class FifoQueue implements TaskQueue {
         }
         return queue.poll();
     }
+
+    public synchronized void drainToList(java.util.List<Task2> list) {
+        queue.drainTo(list);
+    }
 }

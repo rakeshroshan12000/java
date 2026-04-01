@@ -21,4 +21,8 @@ public class LifoQueue implements TaskQueue {
         }
         return queue.pollFirst();
     }
+
+    public synchronized void drainToList(java.util.List<Task2> list) {
+        queue.drainTo(list);
+    }
 }
